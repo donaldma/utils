@@ -1,6 +1,6 @@
 {
-  "name": "@donaldma/utils",
-  "version": "6.0.0",
+  "name": "@donald.ma/utils",
+  "version": "6.1.0",
   "description": "",
   "main": "build/index.js",
   "scripts": {
