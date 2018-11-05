@@ -1,0 +1,36 @@
+{
+  "name": "@donaldma/utils",
+  "version": "6.0.0",
+  "description": "",
+  "main": "build/index.js",
+  "scripts": {
+    "test": "npm run build && npm run test:unit",
+    "test:integration": "mocha --require source-map-support/register --opts integration-mocha.opts",
+    "test:unit": "mocha --require source-map-support/register --opts unit-mocha.opts",
+    "build": "rimraf build && npm run lint && tsc",
+    "lint": "tslint \"src/**/*.ts\" ",
+    "pub:major": "npm run test && npm version major && npm publish --access=public",
+    "pub:minor": "npm run test && npm version minor && npm publish --access=public"
+  },
+  "keywords": [],
+  "author": "Donald Ma",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/lodash": "^4.14.102",
+    "@types/node": "^9.4.0",
+    "rimraf": "^2.6.2",
+    "tslint": "^5.9.1"
+  },
+  "dependencies": {
+    "@types/chai": "^4.1.3",
+    "@types/mocha": "^5.2.0",
+    "axios": "^0.18.0",
+    "chai": "^4.1.2",
+    "cryptocurrencies": "^5.0.0",
+    "lodash": "^4.17.10",
+    "mocha": "^5.1.1",
+    "source-map-support": "^0.5.6",
+    "ts-node": "^6.0.3",
+    "typescript": "^2.7.1"
+  }
+}
