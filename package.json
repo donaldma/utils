@@ -3,6 +3,7 @@
   "version": "1.2.0",
   "description": "",
   "main": "build/index.js",
+  "homepage": "https://github.com/donaldma/utils#readme",
   "scripts": {
     "test": "npm run build && npm run test:unit",
     "test:integration": "mocha --require source-map-support/register --opts integration-mocha.opts",
