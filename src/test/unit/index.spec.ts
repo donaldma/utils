@@ -2,6 +2,7 @@ import { assert } from 'chai'
 import 'mocha'
 import { LoggerService } from '../../services/LoggerService'
 import { isCurrency, isNumeric } from '../..'
+import jsonToQueryString from '../../utils/jsonToQueryString'
 
 describe(LoggerService.newLine('functions test'), () => {
   it('provided a valid string isCurrency should return true or false', () => {
@@ -16,6 +17,15 @@ describe(LoggerService.newLine('functions test'), () => {
     const numbericFalse = isNumeric('dasdas')
     assert.equal(numbericTrue, true)
     assert.equal(numbericFalse, false)
+  })
+
+  it('provided a valid json jsonToQueryString should return a query string', () => {
+    const json = {
+      a: 'a',
+      b: 'b'
+    }
+    const expectedQueryString = 'a=a&b=b'
+    assert.equal(jsonToQueryString(json), expectedQueryString)
   })
 
 })

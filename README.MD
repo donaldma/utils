@@ -18,7 +18,7 @@ An npm package with random functions :)
 
 ### isCurrency
 ```
-const isCurrency = (str) => {
+const isCurrency = (str: string): boolean => {
   const cleanedString = str.trim().toUpperCase()
   const isCrypto = Constants.cryptocurrencies[cleanedString] ? true : false
   const isFiat = Constants.fiatCurrenciesData.includes(cleanedString)
@@ -26,7 +26,13 @@ const isCurrency = (str) => {
   return isCrypto || isFiat
 }
 
-const isNumeric = (value): boolean => {
+const isNumeric = (value: any): boolean => {
   return !isNaN(parseFloat(value)) && isFinite(value)
+}
+
+const jsonToQueryString = (json: object): string => {
+  return Object.keys(json).filter((key) => json[key] !== undefined).map((key) => {
+    return encodeURIComponent(key) + '=' + encodeURIComponent(json[key])
+  }).join('&')
 }
 ```
