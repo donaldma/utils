@@ -18,11 +18,15 @@ An npm package with random functions :)
 
 ### isCurrency
 ```
-export const isCurrency = (str) => {
+const isCurrency = (str) => {
   const cleanedString = str.trim().toUpperCase()
   const isCrypto = Constants.cryptocurrencies[cleanedString] ? true : false
   const isFiat = Constants.fiatCurrenciesData.includes(cleanedString)
 
   return isCrypto || isFiat
+}
+
+const isNumeric = (value): boolean => {
+  return !isNaN(parseFloat(value)) && isFinite(value)
 }
 ```
