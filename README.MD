@@ -5,7 +5,7 @@ An npm package with random functions :)
 
 ## Installation
 
-`npm i donaldma-npm`
+`npm i @donald.ma/utils`
 
 ## Stack
 - [Node.js](https://nodejs.org/en/)
